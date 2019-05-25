@@ -3,7 +3,9 @@ CONFIG += console
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += functions.cpp \
+SOURCES += main.cpp \
+    functions.cpp
+
 
 HEADERS += \
     functions.h
