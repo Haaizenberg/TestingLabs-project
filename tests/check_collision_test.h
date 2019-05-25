@@ -9,6 +9,7 @@ TEST(checkCollisionTest1, negative)
     ASSERT_FALSE(check_collision(150, 88, 2, 2));
     ASSERT_FALSE(check_collision(488, 88, 475, 100));
     ASSERT_FALSE(check_collision(500, 255, 450, 155));
+    ASSERT_FALSE(check_collision(500, 255, 509, 346));
 }
 TEST(checkCollisionTest2, negative)
 {
