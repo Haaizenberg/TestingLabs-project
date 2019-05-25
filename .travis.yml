@@ -1,0 +1,30 @@
+language:
+  - cpp
+  
+before_install:
+  - pip install --user cpp-coveralls
+  - sudo apt-get install -qq valgrind
+  
+addons:
+  sonarcloud:
+    organization: "haaizenberg-github"
+    token:
+      secure: $SONAR_TOKEN
+
+script:
+  - qmake
+  - make
+  - valgrind ./tests/tests
+  - ./tests/tests
+  
+after_success:
+  - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner
+  
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+  
+notifications:
+email: false
