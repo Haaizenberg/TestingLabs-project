@@ -12,7 +12,7 @@ TEST(checkMagicBoxTest1, negative)
 }
 TEST(checkMagicBoxTest2, positive)
 {
-    ASSERT_TRUE(check_magicBox(0));
+    ASSERT_TRUE(check_magicBox(25));
     ASSERT_TRUE(check_magicBox(50));
     ASSERT_TRUE(check_magicBox(500));
 }
@@ -21,6 +21,7 @@ TEST(checkMagicBoxTest3, negative)
     ASSERT_FALSE(check_magicBox(111));
     ASSERT_FALSE(check_magicBox(-355));
     ASSERT_FALSE(check_magicBox(-250));
+    ASSERT_FALSE(check_magicBox(0));
 }
 TEST(checkMagicBoxTest4, positive)
 {
